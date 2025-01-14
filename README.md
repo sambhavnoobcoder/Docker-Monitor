@@ -17,6 +17,17 @@ By running both Docker Compose files, you get a minimal environment where the ta
 
 ---
 
+## Test cmds 
+# Test health endpoint
+curl http://localhost:5000/api/health
+
+# Trigger an issue
+curl http://localhost:5000/api/trigger-issue
+
+# Check health again
+curl http://localhost:5000/api/health
+
+---
 ## Contents
 
 1. [Folder Structure](#folder-structure)  
