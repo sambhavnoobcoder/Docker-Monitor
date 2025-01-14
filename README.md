@@ -53,7 +53,7 @@ Follow these steps to start using the project:
    ```
 3. Bring up the target app using docker-compose:
    ```bash
-   docker compose up -d
+   docker compose up
    ```
    - This starts the container named “dist-monitored-app” on port 3000 (internally mapped to port 5000).  
 4. Open a new terminal window/tab and go to the monitor-agent folder:
@@ -62,7 +62,7 @@ Follow these steps to start using the project:
    ```
 5. Bring up the monitor agent services:
    ```bash
-   docker compose up -d
+   docker compose up
    ```
    - This starts two services:
      - ollama (LLM container) on port 11435 (mapped to 11434 internally)  
