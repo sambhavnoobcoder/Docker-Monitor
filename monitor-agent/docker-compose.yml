@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: dist-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11435:11434"
+    networks:
+      - monitor-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+
+  monitor:
+    image: indosambhav/dist-monitor-agent:latest
+    container_name: dist-monitor-agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - OLLAMA_HOST=http://dist-ollama:11434
+      - TARGET_HOST=host.docker.internal
+      - TARGET_PORT=3000
+    networks:
+      - monitor-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  monitor-network:
+    driver: bridge
+
+volumes:
+  ollama_data:
