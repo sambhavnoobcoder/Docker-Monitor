@@ -14,10 +14,8 @@ By running both Docker Compose files, you get a minimal environment where the ta
 
 - Docker and Docker Compose should be installed and running on your system.
 - Enough system resources to run both containers (the target app and the monitor agent).
-- start by cloning 
-`bash
-https://github.com/sambhavnoobcoder/Docker-Monitor.git
-`
+- start by cloning `git clone <url> `
+
 ---
 ## Contents
 
