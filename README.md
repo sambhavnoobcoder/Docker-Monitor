@@ -14,19 +14,10 @@ By running both Docker Compose files, you get a minimal environment where the ta
 
 - Docker and Docker Compose should be installed and running on your system.
 - Enough system resources to run both containers (the target app and the monitor agent).
-
----
-
-## Test cmds 
-# Test health endpoint
-curl http://localhost:5000/api/health
-
-# Trigger an issue
-curl http://localhost:5000/api/trigger-issue
-
-# Check health again
-curl http://localhost:5000/api/health
-
+- start by cloning 
+`bash
+https://github.com/sambhavnoobcoder/Docker-Monitor.git
+`
 ---
 ## Contents
 
@@ -108,7 +99,17 @@ Feel free to adjust any of these as needed for your environment.
    - Ollama (for LLM processing)  
    - Monitor agent (fetches data from the target app and sends it to Ollama for potential analysis or logging).  
 3. Requests to the target-app can be observed or analyzed in real time by the monitor agent’s logic (could be expanded for logging, AI-based responses, or other behavior).
+---
 
+## Test cmds 
+# Test health endpoint
+curl http://localhost:5000/api/health
+
+### Trigger an issue
+curl http://localhost:5000/api/trigger-issue
+
+### Check health again
+curl http://localhost:5000/api/health
 ---
 
 ## Troubleshooting
